@@ -1,5 +1,6 @@
 #Claire Rhoda
 #1068768
+#Program 1
 #Program that determines whether a person is eligible to vote or not
 
 #user inputs an age
@@ -48,6 +49,7 @@ input('\n\nPress the enter key to quit')
 
 #Claire Rhoda
 #1068768
+#Program 2
 #Program that finds whether the given number is even or odd
 
 #user inputs any number
@@ -94,6 +96,7 @@ input('\n\nPress the enter key to quit')
 
 #Claire Rhoda
 #1068768
+#Program 3
 #Program that determines whether the character entered is a vowel or not
 
 #user inputs a character
@@ -140,6 +143,7 @@ input('\n\nPress the enter key to quit')
 
 #Claire Rhoda
 #1068768
+#Program 4
 #Program that determines if the character entered is a upper/lowercase letter or a number
 
 #user inputs a character (either letter or number)
@@ -186,6 +190,7 @@ input('\n\nPress the enter key to quit')
 
 #Claire Rhoda
 #1068768
+#Program 5
 #Program that prints a number (inputed by user) of horizontal asterisks
 
 #user inputs amount of stars they want
@@ -264,6 +269,7 @@ while lot != -999:
 
 #Claire Rhoda
 #1068768
+#Program 7
 # This program calculates retail prices.
 markup = 0.025
 another = 'y'or 'Y'
@@ -286,6 +292,7 @@ while price >= 0.0:
 
 #Claire Rhoda
 #1068768
+#Program 8
 #This program prints a message five times
 
 #for loop working with the range function
@@ -332,6 +339,7 @@ input('\nPress enter to quit')
 
 #Claire Rhoda
 #1068768
+#Program 9
 #This program calculates the sum of a series of numbers entered by the user.
 
 #user inputs number of numbers they want to find the sum of
@@ -388,6 +396,7 @@ input('\n\nPress the enter key to quit')
 
 #Claire Rhoda
 #1068768
+#Program 10
 #This program converts the speeds 60 kph through 130 kph (in 10 kph increments) to mph.
 start_speed = 60
 end_speed = 131
