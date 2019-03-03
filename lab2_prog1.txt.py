@@ -310,31 +310,6 @@ input('\nPress enter to quit')
 ##Barzinger
 ##Barzinger
 ##Barzinger
-##
-##Press enter to quit
-##
-##Test Case 2
-##>>>
-##============ RESTART: /Users/clairerhoda/Documents/lab2_prog8.py ============
-##Barzinger
-##Barzinger
-##Barzinger
-##Barzinger
-##Barzinger
-##
-##Press enter to quit
-##
-##Test Case 3
-##>>>
-##============ RESTART: /Users/clairerhoda/Documents/lab2_prog8.py ============
-##Barzinger
-##Barzinger
-##Barzinger
-##Barzinger
-##Barzinger
-##
-##Press enter to quit
-
 
 
 #Claire Rhoda
@@ -424,41 +399,6 @@ input('\n\nPress the enter key to quit')
 ##-------------------------
 ##60 	 37.3
 ##70 	 43.5
-##80 	 49.7
-##90 	 55.9
-##100 	 62.1
-##110 	 68.4
-##120 	 74.6
-##130 	 80.8
-##
-##
-##Press the enter key to quit
-##
-##Test Case 2
-##>>>
-##============ RESTART: /Users/clairerhoda/Documents/lab2_prog10.py ============
-##KPH	MPH
-##-------------------------
-##60 	 37.3
-##70 	 43.5
-##80 	 49.7
-##90 	 55.9
-##100 	 62.1
-##110 	 68.4
-##120 	 74.6
-##130 	 80.8
-##
-##
-##Press the enter key to quit
-##
-##Test Case 3
-##>>>
-##============ RESTART: /Users/clairerhoda/Documents/lab2_prog10.py ============
-##KPH	MPH
-##-------------------------
-##60 	 37.3
-##70
-##	 43.5
 ##80 	 49.7
 ##90 	 55.9
 ##100 	 62.1
