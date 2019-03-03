@@ -194,10 +194,34 @@ input('\n\nPress the enter key to quit')
 #Program that prints a number (inputed by user) of horizontal asterisks
 
 #user inputs amount of stars they want
-i = int(input("How many stars do you want?"))
-while (i <= 20):
-    print("*", end = '')
-    i = i + 1
+starAmount = int(input("How many stars do you want?")) . #user inputs the amount of stars they want printed
+numPrint = 0 #numPrint is set to zero so the while loop under is always true
+while starAmount > numPrint:
+    print("*", end = '')  #end = '' prevents the stars to be printed vertically
+    numPrint = numPrint + 1  #this prevents the program from printing the input amount of stars repeatedly
+input("\nPress enter to quit")
+    
+##Test Case 1    
+##>>> 
+##============ RESTART: /Users/clairerhoda/Documents/lab2_prog5.py ============
+##How many stars do you want?7
+##*******
+##Press enter to quit
+##
+##Test Case 2
+##>>> 
+##============ RESTART: /Users/clairerhoda/Documents/lab2_prog5.py ============
+##How many stars do you want?0
+##
+##Press enter to quit
+##
+##Test Case 3
+##>>> 
+##============ RESTART: /Users/clairerhoda/Documents/lab2_prog5.py ============
+##How many stars do you want?2
+##**
+##Press enter to quit
+##>>> 
 
 #ask user to kill program
 input('\n\nPress the enter key to quit')
@@ -266,28 +290,63 @@ while lot != -999:
 ##Enter the property lot number or enter -999 to end
 ##Enter the lot number: -999
 
-
 #Claire Rhoda
 #1068768
 #Program 7
-# This program calculates retail prices.
-markup = 0.025
-another = 'y'or 'Y'
-none = 'n'or 'N'
-price = float(input("Enter the item’s wholesale cost: "))
-
-while price < 0:
-    print("ERROR: the cost cannot be negative")
-    price = float(input("Enter the correct wholesale cost: "))
-
-while price >= 0.0:
-    retailPrice = (markup *  price)
-    print("Retail price is $",format(retailPrice,',.2f'))
-    again = input('Do you have another item? (Enter y for yes): ')
-    if another == 'y' or another == 'Y':
-        price = float(input("Enter the item's wholesale cost: "))
-    elif none == 'n' or none == 'N':
-        print()
+#This program calculates the retail price of an item
+mark_up = 2.5  # The markup percentage
+another = 'y'  # Variable to control the loop.
+while another == 'y' or another == 'Y':     
+    wholesale = float(input("Enter the item's " + \ #lets user input the wholesale
+                            "wholesale cost: "))
+    if wholesale < 0:    #calculates as an error if wholesale entered is negative
+        print('ERROR: the cost cannot be negative.')
+        wholesale = float(input('Enter the correct ' + \ #lets user input correct wholesale 
+                            'wholesale cost:'))
+        retail = wholesale * mark_up      #retail is calculated
+        print("Retail price is $",retail)
+        another = input('Do you have another item? ' + \   #user is asked if they would want to find the retail price of another item
+                            '(Enter y for yes): ')
+    elif wholesale >= 0:   #if input is entered correctly, the item is then calculated to find retail
+            retail = wholesale * mark_up
+            print("Retail price is $",retail)
+            another = input('Do you have another item? ' + \ . #user is asked if they have another item to be calculated
+                            '(Enter y for yes): ')
+        
+##Test Case 1
+##>>>
+##============ RESTART: /Users/clairerhoda/Documents/lab2_prog7.py ============
+##Enter the item's wholesale cost: 6789
+##Retail price is $ 16972.5
+##Do you have another item? (Enter y for yes): y
+##Enter the item's wholesale cost: 500
+##Retail price is $ 1250.0
+##Do you have another item? (Enter y for yes): n
+##
+##Test Case 2
+##>>>
+##============ RESTART: /Users/clairerhoda/Documents/lab2_prog7.py ============
+##Enter the item's wholesale cost: -234
+##ERROR: the cost cannot be negative.
+##Enter the correct wholesale cost:234
+##Retail price is $ 585.0
+##Do you have another item? (Enter y for yes): n
+##
+##Test Case 3
+##>>> 
+##============ RESTART: /Users/clairerhoda/Documents/lab2_prog7.py ============
+##Enter the item's wholesale cost: 345
+##Retail price is $ 862.5
+##Do you have another item? (Enter y for yes): y
+##Enter the item's wholesale cost: 567
+##Retail price is $ 1417.5
+##Do you have another item? (Enter y for yes): Y
+##Enter the item's wholesale cost: -7867
+##ERROR: the cost cannot be negative.
+##Enter the correct wholesale cost:7867
+##Retail price is $ 19667.5
+##Do you have another item? (Enter y for yes): n
+##>>> 
 
 
 #Claire Rhoda
