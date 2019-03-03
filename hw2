@@ -1,0 +1,101 @@
+import random  #the computer receives a random number
+user_num = 0.0
+lottery_num = random.randint(10,99)  #a random number is chosen 11 through 99.
+#user inputs their guess
+while user_num != -999:
+    user_num = int(input("Enter a two digit number: "))
+    user1stDigit = user_num // 10   #//10 used to find the tenths place
+    user2ndDigit = user_num % (10)  #% 10 used to find ones place
+    lottery1stDigit = lottery_num // 10
+    lottery2ndDigit = lottery_num % (10)
+    if user_num == lottery_num:     #the computer number is completly equal to the user's guess
+        print("You got all the right digits! + $10000")
+    elif lottery2ndDigit == user1stDigit and lottery1stDigit == user2ndDigit:    #is used to see if the computer number and the guess have at least the same numbers used
+        print("You match the digits but not the order +$3000")
+    elif lottery2ndDigit == user2ndDigit or user1stDigit == lottery1stDigit or user1stDigit == lottery2ndDigit or user2ndDigit == lottery1stDigit:   #used to see if at least one digit is the same between the computer number and the guess
+        print("You got one of the digits correct +$1000")
+        
+
+##Test Case 1
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 90
+##You got one of the digits correct +$1000
+##Enter a two digit number: 98
+##You got one of the digits correct +$1000
+##Enter a two digit number: 97
+##Enter a two digit number: 80
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>>
+##
+##Test Case 2
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 23
+##Enter a two digit number: 45
+##Enter a two digit number: 67
+##Enter a two digit number: 89
+##You got one of the digits correct +$1000
+##Enter a two digit number: 90
+##Enter a two digit number: 88
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>>
+##
+##Test Case 3
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 34
+##Enter a two digit number: 56
+##You got one of the digits correct +$1000
+##Enter a two digit number: 55
+##You got one of the digits correct +$1000
+##Enter a two digit number: 57
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>>
+##
+##Test Case 4
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 67
+##Enter a two digit number: 56
+##Enter a two digit number: 43
+##You got one of the digits correct +$1000
+##Enter a two digit number: 23
+##You got one of the digits correct +$1000
+##Enter a two digit number: 33
+##Enter a two digit number: 24
+##You match the digits but not the order +$3000
+##Enter a two digit number: 42
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>>
+##
+##Test Case 5
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 89
+##Enter a two digit number: 87
+##You got one of the digits correct +$1000
+##Enter a two digit number: 77
+##You got one of the digits correct +$1000
+##Enter a two digit number: 67
+##You got one of the digits correct +$1000
+##Enter a two digit number: 57
+##You got one of the digits correct +$1000
+##Enter a two digit number: 97
+##You got one of the digits correct +$1000
+##Enter a two digit number: 70
+##You got one of the digits correct +$1000
+##Enter a two digit number: 72
+##You got one of the digits correct +$1000
+##Enter a two digit number: 71
+##You got one of the digits correct +$1000
+##Enter a two digit number: 17
+##You got one of the digits correct +$1000
+##Enter a two digit number: 72
+##You got one of the digits correct +$1000
+##Enter a two digit number: 73
+##You match the digits but not the order +$3000
+##Enter a two digit number: 37
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>> 
+
