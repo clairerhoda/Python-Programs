@@ -1,6 +1,6 @@
 import random  #the computer receives a random number
 user_num = 0.0
-lottery_num = random.randint(10,99)  #a random number is chosen 11 through 99.
+lottery_num = random.randint(10,99)  #a random number two digit number is chosen.
 #user inputs their guess
 while user_num != -999:
     user_num = int(input("Enter a two digit number: "))
