@@ -107,9 +107,8 @@ while user_num != -999:
 
 #input/allows the user to enter the amount of stocks they choose to purchase from a certain company
 
-num = 0
-while num != -999:
-    stockName = input("Enter stock name")
+stockName = input("Enter stock name")
+while num != '-999':
     shares = float(input("Enter number of shares bought"))
     stockPurchasePrice = float(input("Enter stock purchase price"))
     stockSellPrice = float(input("Enter stock selling price"))
@@ -125,136 +124,8 @@ while num != -999:
     print("Amount the stock sold for:       $",format(soldStock,"12,.2f"))
     print("Commission paid on the sale:     $",format(commPriceSold,"12,.2f"))
     print("Profit(or loss if negative):     $",format(ProfitLoss,"12,.2f"))
-    num = int(input("Press any number to compute a new stock or enter -999 to quit"))
+    stockName = input("Enter stock name")
 
-##Test Case 1
-##>>> 
-## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog2.py 
-##Enter stock nameDisney
-##Enter number of shares bought34
-##Enter stock purchase price60
-##Enter stock selling price70
-##Enter broker commission0.04
-##Stock Name: Disney
-##
-##Amount paid for the stock:       $     2,040.00
-##Commission paid on the purchase: $        81.60
-##Amount the stock sold for:       $     2,380.00
-##Commission paid on the sale:     $        95.20
-##Profit(or loss if negative):     $       163.20
-##Press any number to compute a new stock or enter -999 to quit5
-##Enter stock nameGoogle
-##Enter number of shares bought50
-##Enter stock purchase price700
-##Enter stock selling price400
-##Enter broker commission0.04
-##Stock Name: Google
-##
-##Amount paid for the stock:       $    35,000.00
-##Commission paid on the purchase: $     1,400.00
-##Amount the stock sold for:       $    20,000.00
-##Commission paid on the sale:     $       800.00
-##Profit(or loss if negative):     $   -17,200.00
-##Press any number to compute a new stock or enter -999 to quit-999
-##
-##Test Case 2
-##>>> 
-## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog2.py 
-##Enter stock nameApple
-##Enter number of shares bought450
-##Enter stock purchase price50
-##Enter stock selling price65
-##Enter broker commission0.05
-##Stock Name: Apple
-##
-##Amount paid for the stock:       $    22,500.00
-##Commission paid on the purchase: $     1,125.00
-##Amount the stock sold for:       $    29,250.00
-##Commission paid on the sale:     $     1,462.50
-##Profit(or loss if negative):     $     4,162.50
-##Press any number to compute a new stock or enter -999 to quit-999
-##
-##Test Case 3
-##>>>
-## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog2.py 
-##Enter stock nameFord
-##Enter number of shares bought2
-##Enter stock purchase price500
-##Enter stock selling price40
-##Enter broker commission0.05
-##Stock Name: Ford
-##
-##Amount paid for the stock:       $     1,000.00
-##Commission paid on the purchase: $        50.00
-##Amount the stock sold for:       $        80.00
-##Commission paid on the sale:     $         4.00
-##Profit(or loss if negative):     $      -974.00
-##Press any number to compute a new stock or enter -999 to quit-999
-##
-##Test Case 3
-##>>>
-## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog2.py 
-##Enter stock nameNokia
-##Enter number of shares bought50
-##Enter stock purchase price67
-##Enter stock selling price78
-##Enter broker commission0.056
-##Stock Name: Nokia
-##
-##Amount paid for the stock:       $     3,350.00
-##Commission paid on the purchase: $       187.60
-##Amount the stock sold for:       $     3,900.00
-##Commission paid on the sale:     $       218.40
-##Profit(or loss if negative):     $       144.00
-##Press any number to compute a new stock or enter -999 to quit-999
-##
-##Test Case 4
-##>>> 
-## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog2.py 
-##Enter stock nameSquare Enix
-##Enter number of shares bought1
-##Enter stock purchase price23
-##Enter stock selling price34
-##Enter broker commission0.067
-##Stock Name: Square Enix
-##
-##Amount paid for the stock:       $        23.00
-##Commission paid on the purchase: $         1.54
-##Amount the stock sold for:       $        34.00
-##Commission paid on the sale:     $         2.28
-##Profit(or loss if negative):     $         7.18
-##Press any number to compute a new stock or enter -999 to quit-999
-##
-##Test Case 5
-##>>> 
-## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog2.py 
-##Enter stock nameMicrosoft
-##Enter number of shares bought469
-##Enter stock purchase price500
-##Enter stock selling price10000
-##Enter broker commission0.09
-##Stock Name: Microsoft
-##
-##Amount paid for the stock:       $   234,500.00
-##Commission paid on the purchase: $    21,105.00
-##Amount the stock sold for:       $ 4,690,000.00
-##Commission paid on the sale:     $   422,100.00
-##Profit(or loss if negative):     $ 4,012,295.00
-##Press any number to compute a new stock or enter -999 to quit9
-##Enter stock nameCanada Dry
-##Enter number of shares bought680
-##Enter stock purchase price20
-##Enter stock selling price12
-##Enter broker commission0.02
-##Stock Name: Canada Dry
-##
-##Amount paid for the stock:       $    13,600.00
-##Commission paid on the purchase: $       272.00
-##Amount the stock sold for:       $     8,160.00
-##Commission paid on the sale:     $       163.20
-##Profit(or loss if negative):     $    -5,875.20
-##Press any number to compute a new stock or enter -999 to quit-999
-##>>> 
 
 
 
