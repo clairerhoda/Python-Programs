@@ -108,7 +108,7 @@ while user_num != -999:
 #input/allows the user to enter the amount of stocks they choose to purchase from a certain company
 
 stockName = input("Enter stock name")
-while num != '-999':
+while stockName != '-999':
     shares = float(input("Enter number of shares bought"))
     stockPurchasePrice = float(input("Enter stock purchase price"))
     stockSellPrice = float(input("Enter stock selling price"))
@@ -124,9 +124,141 @@ while num != '-999':
     print("Amount the stock sold for:       $",format(soldStock,"12,.2f"))
     print("Commission paid on the sale:     $",format(commPriceSold,"12,.2f"))
     print("Profit(or loss if negative):     $",format(ProfitLoss,"12,.2f"))
-    stockName = input("Enter stock name")
+    stockName = input("Enter stock name to start a new stock or -999 to quit")
 
-
+##Test Case 1
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameApple
+##Enter number of shares bought50
+##Enter stock purchase price500
+##Enter stock selling price550
+##Enter broker commission0.04
+##Stock Name: Apple
+##
+##Amount paid for the stock:       $    25,000.00
+##Commission paid on the purchase: $     1,000.00
+##Amount the stock sold for:       $    27,500.00
+##Commission paid on the sale:     $     1,100.00
+##Profit(or loss if negative):     $       400.00
+##Enter stock name to start a new stock or -999 to quit-999
+##
+##Test Case 2
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameDisney
+##Enter number of shares bought35
+##Enter stock purchase price200
+##Enter stock selling price225
+##Enter broker commission0.5
+##Stock Name: Disney
+##
+##Amount paid for the stock:       $     7,000.00
+##Commission paid on the purchase: $     3,500.00
+##Amount the stock sold for:       $     7,875.00
+##Commission paid on the sale:     $     3,937.50
+##Profit(or loss if negative):     $    -6,562.50
+##Enter stock name to start a new stock or -999 to quitSquare Enix
+##Enter number of shares bought25
+##Enter stock purchase price55
+##Enter stock selling price40
+##Enter broker commission0.02
+##Stock Name: Square Enix
+##
+##Amount paid for the stock:       $     1,375.00
+##Commission paid on the purchase: $        27.50
+##Amount the stock sold for:       $     1,000.00
+##Commission paid on the sale:     $        20.00
+##Profit(or loss if negative):     $      -422.50
+##Enter stock name to start a new stock or -999 to quit-999
+##
+##Test Case 3
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameAmazon
+##Enter number of shares bought750
+##Enter stock purchase price300
+##Enter stock selling price450
+##Enter broker commission0.09
+##Stock Name: Amazon
+##
+##Amount paid for the stock:       $   225,000.00
+##Commission paid on the purchase: $    20,250.00
+##Amount the stock sold for:       $   337,500.00
+##Commission paid on the sale:     $    30,375.00
+##Profit(or loss if negative):     $    61,875.00
+##Enter stock name to start a new stock or -999 to quitMicrosoft
+##Enter number of shares bought34
+##Enter stock purchase price300
+##Enter stock selling price340
+##Enter broker commission0.04
+##Stock Name: Microsoft
+##
+##Amount paid for the stock:       $    10,200.00
+##Commission paid on the purchase: $       408.00
+##Amount the stock sold for:       $    11,560.00
+##Commission paid on the sale:     $       462.40
+##Profit(or loss if negative):     $       489.60
+##Enter stock name to start a new stock or -999 to quit-999
+##
+##Test Case 4
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameGoogle
+##Enter number of shares bought50
+##Enter stock purchase price700
+##Enter stock selling price650
+##Enter broker commission0.03
+##Stock Name: Google
+##
+##Amount paid for the stock:       $    35,000.00
+##Commission paid on the purchase: $     1,050.00
+##Amount the stock sold for:       $    32,500.00
+##Commission paid on the sale:     $       975.00
+##Profit(or loss if negative):     $    -4,525.00
+##Enter stock name to start a new stock or -999 to quitCrexendo
+##Enter number of shares bought25
+##Enter stock purchase price35
+##Enter stock selling price40
+##Enter broker commission0.02
+##Stock Name: Crexendo
+##
+##Amount paid for the stock:       $       875.00
+##Commission paid on the purchase: $        17.50
+##Amount the stock sold for:       $     1,000.00
+##Commission paid on the sale:     $        20.00
+##Profit(or loss if negative):     $        87.50
+##Enter stock name to start a new stock or -999 to quitFacebook
+##Enter number of shares bought1000
+##Enter stock purchase price23
+##Enter stock selling price40
+##Enter broker commission0.06
+##Stock Name: Facebook
+##
+##Amount paid for the stock:       $    23,000.00
+##Commission paid on the purchase: $     1,380.00
+##Amount the stock sold for:       $    40,000.00
+##Commission paid on the sale:     $     2,400.00
+##Profit(or loss if negative):     $    13,220.00
+##Enter stock name to start a new stock or -999 to quit-999
+##
+##Test Case 5
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameYahoo
+##Enter number of shares bought450
+##Enter stock purchase price67
+##Enter stock selling price90
+##Enter broker commission0.01
+##Stock Name: Yahoo
+##
+##Amount paid for the stock:       $    30,150.00
+##Commission paid on the purchase: $       301.50
+##Amount the stock sold for:       $    40,500.00
+##Commission paid on the sale:     $       405.00
+##Profit(or loss if negative):     $     9,643.50
+##Enter stock name to start a new stock or -999 to quit-999
+##>>> 
 
 
 #Claire Rhoda
