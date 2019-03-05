@@ -1,0 +1,369 @@
+import random  #the computer receives a random number
+user_num = 0.0
+lottery_num = random.randint(10,99)  #a random number two digit number is chosen.
+#user inputs their guess
+while user_num != -999:
+    user_num = int(input("Enter a two digit number: "))
+    user1stDigit = user_num // 10   #//10 used to find the tenths place
+    user2ndDigit = user_num % (10)  #% 10 used to find ones place
+    lottery1stDigit = lottery_num // 10
+    lottery2ndDigit = lottery_num % (10)
+    if user_num == lottery_num:     #the computer number is completly equal to the user's guess
+        print("You got all the right digits! + $10000")
+    elif lottery2ndDigit == user1stDigit and lottery1stDigit == user2ndDigit:    #is used to see if the computer number and the guess have at least the same numbers used
+        print("You match the digits but not the order +$3000")
+    elif lottery2ndDigit == user2ndDigit or user1stDigit == lottery1stDigit or user1stDigit == lottery2ndDigit or user2ndDigit == lottery1stDigit:   #used to see if at least one digit is the same between the computer number and the guess
+        print("You got one of the digits correct +$1000")
+        
+
+##Test Case 1
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 90
+##You got one of the digits correct +$1000
+##Enter a two digit number: 98
+##You got one of the digits correct +$1000
+##Enter a two digit number: 97
+##Enter a two digit number: 80
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>>
+##
+##Test Case 2
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 23
+##Enter a two digit number: 45
+##Enter a two digit number: 67
+##Enter a two digit number: 89
+##You got one of the digits correct +$1000
+##Enter a two digit number: 90
+##Enter a two digit number: 88
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>>
+##
+##Test Case 3
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 34
+##Enter a two digit number: 56
+##You got one of the digits correct +$1000
+##Enter a two digit number: 55
+##You got one of the digits correct +$1000
+##Enter a two digit number: 57
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>>
+##
+##Test Case 4
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 67
+##Enter a two digit number: 56
+##Enter a two digit number: 43
+##You got one of the digits correct +$1000
+##Enter a two digit number: 23
+##You got one of the digits correct +$1000
+##Enter a two digit number: 33
+##Enter a two digit number: 24
+##You match the digits but not the order +$3000
+##Enter a two digit number: 42
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>>
+##
+##Test Case 5
+##===== RESTART: C:/Users/clair/Documents/Computer Science 10/hw2_prog1.py =====
+##Enter a two digit number: 89
+##Enter a two digit number: 87
+##You got one of the digits correct +$1000
+##Enter a two digit number: 77
+##You got one of the digits correct +$1000
+##Enter a two digit number: 67
+##You got one of the digits correct +$1000
+##Enter a two digit number: 57
+##You got one of the digits correct +$1000
+##Enter a two digit number: 97
+##You got one of the digits correct +$1000
+##Enter a two digit number: 70
+##You got one of the digits correct +$1000
+##Enter a two digit number: 72
+##You got one of the digits correct +$1000
+##Enter a two digit number: 71
+##You got one of the digits correct +$1000
+##Enter a two digit number: 17
+##You got one of the digits correct +$1000
+##Enter a two digit number: 72
+##You got one of the digits correct +$1000
+##Enter a two digit number: 73
+##You match the digits but not the order +$3000
+##Enter a two digit number: 37
+##You got all the right digits! + $10000
+##Enter a two digit number: -999
+##>>> 
+
+
+#Claire Rhoda
+#1068768
+#Program 2 
+#This program allows the user to determine his profit(or loss) from buying and selling a stock.
+
+#input/allows the user to enter the amount of stocks they choose to purchase from a certain company
+
+stockName = input("Enter stock name")
+while stockName != '-999':
+    shares = float(input("Enter number of shares bought"))
+    stockPurchasePrice = float(input("Enter stock purchase price"))
+    stockSellPrice = float(input("Enter stock selling price"))
+    brokercomm = float(input("Enter broker commission"))
+    totalStockPrice = shares * stockPurchasePrice
+    commPriceBought = totalStockPrice * brokercomm
+    soldStock = shares * stockSellPrice
+    commPriceSold = soldStock * brokercomm
+    ProfitLoss =(soldStock- commPriceSold) - (totalStockPrice + commPriceBought)
+    print("Stock Name:",stockName)
+    print("\nAmount paid for the stock:       $",format(totalStockPrice,"12,.2f"))
+    print("Commission paid on the purchase: $",format(commPriceBought,"12,.2f"))
+    print("Amount the stock sold for:       $",format(soldStock,"12,.2f"))
+    print("Commission paid on the sale:     $",format(commPriceSold,"12,.2f"))
+    print("Profit(or loss if negative):     $",format(ProfitLoss,"12,.2f"))
+    stockName = input("Enter stock name to start a new stock or -999 to quit")
+
+##Test Case 1
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameApple
+##Enter number of shares bought50
+##Enter stock purchase price500
+##Enter stock selling price550
+##Enter broker commission0.04
+##Stock Name: Apple
+##
+##Amount paid for the stock:       $    25,000.00
+##Commission paid on the purchase: $     1,000.00
+##Amount the stock sold for:       $    27,500.00
+##Commission paid on the sale:     $     1,100.00
+##Profit(or loss if negative):     $       400.00
+##Enter stock name to start a new stock or -999 to quit-999
+##
+##Test Case 2
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameDisney
+##Enter number of shares bought35
+##Enter stock purchase price200
+##Enter stock selling price225
+##Enter broker commission0.5
+##Stock Name: Disney
+##
+##Amount paid for the stock:       $     7,000.00
+##Commission paid on the purchase: $     3,500.00
+##Amount the stock sold for:       $     7,875.00
+##Commission paid on the sale:     $     3,937.50
+##Profit(or loss if negative):     $    -6,562.50
+##Enter stock name to start a new stock or -999 to quitSquare Enix
+##Enter number of shares bought25
+##Enter stock purchase price55
+##Enter stock selling price40
+##Enter broker commission0.02
+##Stock Name: Square Enix
+##
+##Amount paid for the stock:       $     1,375.00
+##Commission paid on the purchase: $        27.50
+##Amount the stock sold for:       $     1,000.00
+##Commission paid on the sale:     $        20.00
+##Profit(or loss if negative):     $      -422.50
+##Enter stock name to start a new stock or -999 to quit-999
+##
+##Test Case 3
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameAmazon
+##Enter number of shares bought750
+##Enter stock purchase price300
+##Enter stock selling price450
+##Enter broker commission0.09
+##Stock Name: Amazon
+##
+##Amount paid for the stock:       $   225,000.00
+##Commission paid on the purchase: $    20,250.00
+##Amount the stock sold for:       $   337,500.00
+##Commission paid on the sale:     $    30,375.00
+##Profit(or loss if negative):     $    61,875.00
+##Enter stock name to start a new stock or -999 to quitMicrosoft
+##Enter number of shares bought34
+##Enter stock purchase price300
+##Enter stock selling price340
+##Enter broker commission0.04
+##Stock Name: Microsoft
+##
+##Amount paid for the stock:       $    10,200.00
+##Commission paid on the purchase: $       408.00
+##Amount the stock sold for:       $    11,560.00
+##Commission paid on the sale:     $       462.40
+##Profit(or loss if negative):     $       489.60
+##Enter stock name to start a new stock or -999 to quit-999
+##
+##Test Case 4
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameGoogle
+##Enter number of shares bought50
+##Enter stock purchase price700
+##Enter stock selling price650
+##Enter broker commission0.03
+##Stock Name: Google
+##
+##Amount paid for the stock:       $    35,000.00
+##Commission paid on the purchase: $     1,050.00
+##Amount the stock sold for:       $    32,500.00
+##Commission paid on the sale:     $       975.00
+##Profit(or loss if negative):     $    -4,525.00
+##Enter stock name to start a new stock or -999 to quitCrexendo
+##Enter number of shares bought25
+##Enter stock purchase price35
+##Enter stock selling price40
+##Enter broker commission0.02
+##Stock Name: Crexendo
+##
+##Amount paid for the stock:       $       875.00
+##Commission paid on the purchase: $        17.50
+##Amount the stock sold for:       $     1,000.00
+##Commission paid on the sale:     $        20.00
+##Profit(or loss if negative):     $        87.50
+##Enter stock name to start a new stock or -999 to quitFacebook
+##Enter number of shares bought1000
+##Enter stock purchase price23
+##Enter stock selling price40
+##Enter broker commission0.06
+##Stock Name: Facebook
+##
+##Amount paid for the stock:       $    23,000.00
+##Commission paid on the purchase: $     1,380.00
+##Amount the stock sold for:       $    40,000.00
+##Commission paid on the sale:     $     2,400.00
+##Profit(or loss if negative):     $    13,220.00
+##Enter stock name to start a new stock or -999 to quit-999
+##
+##Test Case 5
+##>>> 
+##============= RESTART: /Users/clairerhoda/Documents/hw2_prog2.py =============
+##Enter stock nameYahoo
+##Enter number of shares bought450
+##Enter stock purchase price67
+##Enter stock selling price90
+##Enter broker commission0.01
+##Stock Name: Yahoo
+##
+##Amount paid for the stock:       $    30,150.00
+##Commission paid on the purchase: $       301.50
+##Amount the stock sold for:       $    40,500.00
+##Commission paid on the sale:     $       405.00
+##Profit(or loss if negative):     $     9,643.50
+##Enter stock name to start a new stock or -999 to quit-999
+##>>> 
+
+
+#Claire Rhoda
+#1068768
+#Program 3 (Loan Program)
+#This program computes the loan amount, its monthly payment and total payment after the user inputs their annual interest rate, the number of years, and the amount they want to borrow.
+
+#input for amount of stocks user wants to enter information for
+num_prog = int(input("How many stocks do you want to enter?"))
+
+#calculations
+for stocks in range(num_prog):  #calculates how many times it should print information in for loop
+    print("Stock Number",stocks + 1)   #prints which stock is being computed
+    #all calculations to solve Stock information
+    annualInterestRate = float(input("Enter annual interest rate, e.g., 7.25:"))
+    numberOfYears = int(input("Enter number of years, e.g., 5:"))
+    loanAmount = float(input("Enter the amount you want to borrow, e.g., 120000.95:"))
+    monthlyInterestRate = ( annualInterestRate ) / 1200
+    monthlyPayment = ( loanAmount * monthlyInterestRate ) / (1 - (1 / (1 + monthlyInterestRate) ** (numberOfYears * 12)))
+    totalPayment = monthlyPayment * numberOfYears * 12
+
+#outputs all stock information for each seperate stock after each input
+    print("Enter annual interest rate,",format(annualInterestRate,".2f"))
+    print("Enter number of years as an interger,",numberOfYears)
+    print("Enter loan amount,",format(loanAmount,".2f"))
+    print("The monthly payment is",format(monthlyPayment,".2f"))
+    print("The total payment is",format(totalPayment,".2f"))
+
+##>>> 
+##Test Case 1
+## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog3.py 
+##How many stocks do you want to enter?3
+##Stock Number 1
+##Enter annual interest rate, e.g., 7.25:7.6
+##Enter number of years, e.g., 5:2
+##Enter the amount you want to borrow, e.g., 120000.95:3456.0
+##Enter annual interest rate, 7.60
+##Enter number of years as an interger, 2
+##Enter loan amount, 3456.00
+##The monthly payment is 155.68
+##The total payment is 3736.22
+##Stock Number 2
+##Enter annual interest rate, e.g., 7.25:45.6
+##Enter number of years, e.g., 5:2
+##Enter the amount you want to borrow, e.g., 120000.95:5600.4
+##Enter annual interest rate, 45.60
+##Enter number of years as an interger, 2
+##Enter loan amount, 5600.40
+##The monthly payment is 359.83
+##The total payment is 8635.92
+##Stock Number 3
+##Enter annual interest rate, e.g., 7.25:5.
+##Enter number of years, e.g., 5:4
+##Enter the amount you want to borrow, e.g., 120000.95:34524.00
+##Enter annual interest rate, 5.00
+##Enter number of years as an interger, 4
+##Enter loan amount, 34524.00
+##The monthly payment is 795.06
+##The total payment is 38163.04
+##
+##>>>
+##Test Case 2
+## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog3.py 
+##How many stocks do you want to enter?2
+##Stock Number 1
+##Enter annual interest rate, e.g., 7.25:4.44
+##Enter number of years, e.g., 5:4
+##Enter the amount you want to borrow, e.g., 120000.95:4444.44
+##Enter annual interest rate, 4.44
+##Enter number of years as an interger, 4
+##Enter loan amount, 4444.44
+##The monthly payment is 101.23
+##The total payment is 4858.98
+##Stock Number 2
+##Enter annual interest rate, e.g., 7.25:12.3
+##Enter number of years, e.g., 5:4
+##Enter the amount you want to borrow, e.g., 120000.95:5678.9
+##Enter annual interest rate, 12.30
+##Enter number of years as an interger, 4
+##Enter loan amount, 5678.90
+##The monthly payment is 150.39
+##The total payment is 7218.48
+##
+##>>>     
+##Test Case 3
+## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog3.py 
+##How many stocks do you want to enter?1
+##Stock Number 1
+##Enter annual interest rate, e.g., 7.25:6.0
+##Enter number of years, e.g., 5:2
+##Enter the amount you want to borrow, e.g., 120000.95:45367.8
+##Enter annual interest rate, 6.00
+##Enter number of years as an interger, 2
+##Enter loan amount, 45367.80
+##The monthly payment is 2010.73
+##The total payment is 48257.49
+##
+##>>>
+##Test Case 4
+## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog3.py 
+##How many stocks do you want to enter?0
+##
+##>>>    
+##Test Case 5
+## RESTART: C:/Users/clair/AppData/Local/Programs/Python/Python37-32/hw2_prog3.py 
+##How many stocks do you want to enter?-6
+##>>>
+
