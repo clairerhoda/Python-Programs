@@ -5,10 +5,9 @@
 
 #user inputs their income
 
-user_income = 0
+user_income = int(input("Enter a negative to quit or a new tax income to continue"))
 
 while user_income >= 0:
-    user_income = int(input("Enter a negative to quit or a new tax income to continue"))
     #calculations for 2017
     if user_income <= 9325:
         tax17 =  (user_income * .10)
@@ -45,4 +44,5 @@ while user_income >= 0:
     print("2018 tax:",tax18)
     print("Differnce:",tax18 - tax17)
     print("Difference (percent) :",((tax17 - tax18)/ tax17 * 100))
-    
+    user_income = int(input("Enter a negative to quit or a new tax income to continue"))
+
