@@ -8,8 +8,8 @@ def delEven(numbers:list)->list:
     odd = []
     for even in numbers:
         if numbers[even] % 2 != 0: 
-            odd = odd.remove(even)
-            return odd
+            odd.append(even)
+    return odd
 
 def makeList()->list:
     numbers = list(range(1,11))
