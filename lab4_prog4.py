@@ -1,8 +1,9 @@
-#CLaire Rhoda
+#Claire Rhoda
 #1068768
 #Program 4
 #This program creates a tuple with descending positive numbers.
 def getTuple()->tuple:
+    """recieves tuple"""
     user_tuple = (-10,1,2,-9,3,4,-8,5,6)  #tuple is given to main func
     return user_tuple
 
