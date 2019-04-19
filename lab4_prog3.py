@@ -3,6 +3,7 @@
 #Program 3
 #This program removes duplicates from an user inputed list
 def createList()->list:
+    """user appends numbers to a list"""
     user_list = []  #blank list is formatted 
     again = 'Y'
     while again.upper() =='Y':  #allows user to enter another number to the list
@@ -12,6 +13,7 @@ def createList()->list:
         again = input("y = yes or n = no")
     return user_list  #full list is returned to main function
 def removeDuplicates(user_list:list)->list:
+    """duplicates are removed"""
     no_duplicate_list = [] #new list is created
     for numbers in user_list:
         if numbers not in no_duplicate_list: #duplicates are filtered out from
@@ -20,6 +22,7 @@ def removeDuplicates(user_list:list)->list:
 
 
 def main():
+    """calls functions for info and displays results"""
     user_input = createList()  #new list is created from call
     print("Original List:", user_input)
     print("List after removing duplicates:", removeDuplicates(user_input))
