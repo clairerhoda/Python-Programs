@@ -4,8 +4,73 @@
 #This program carryies out a portion of tasks for a list of intergers.
 
 #Define constant variables.
-ONE_TEN = [1,2,3,4,5,6,7,8,9,10]
+ONE_TEN = [12, 20, 10, 14, 54, 16, 75, 38, 79, 103]
 
+
+def swapFirstLast(origData:list)->list:
+    origData[0],origData[-1] = origData[-1],origData[0]
+    return origData
+
+
+def shiftRight(origData:list)->list:
+    last = origData[-1]
+    origData.insert(0,last)
+    origData.reverse()
+    origData.remove(last)
+    origData.reverse()
+    return origData
+
+
+def replaceEven(origData:list)->list:
+    for index in origData:
+        if index % 2 == 0:
+            return origData
+            
+            
+def relaceNeighbors(origData:list)->list:
+    for index in origData:
+        if origData[i] > origData[n]:
+            return origData
+
+
+def removeMiddle(origData:list)->list:
+    return
+def evenToFront(origData:list)->list:
+    return
+def secondLargest(origData:list)->int:
+    i = 0
+    z = 0
+    for num in origData:
+        if i < num:
+            z = i
+            i = num
+           
+        if num > z and num < i:
+            z = num
+    return z
+
+
+def isIncreasing(origData:list)->bool:
+    flag = 0
+    i = 1
+    while i < len(origList):
+        if (origList[i] < origList[i - 1]):
+                return False
+        i += 1
+        
+        else:
+                return True
+    return False
+def hasAdjacentDuplicates(origData:list)->bool:
+    return
+def hasDuplicate(origData:list)->bool:
+    duplicateList = []
+    for num in origData:
+            if num not in duplicateList:
+                return True
+    return False
+        
+    
 def main():
     print("The original data for all functions is: ", ONE_TEN)
 
@@ -39,7 +104,7 @@ def main():
     evenToFront(data)
     print("After moving even elements: ", data)
 
-    #g. Demonstrate finding the second largest value.
+    g. Demonstrate finding the second largest value.
     print("The second largest value is: ", secondLargest(ONE_TEN))
 
     #h. Demonstrate testing if the list is in increasing order.
@@ -52,3 +117,5 @@ def main():
     print("The list has duplicates: ", hasDuplicate(ONE_TEN))
     
     
+if __name__ == "__main__":
+    main()
