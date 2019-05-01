@@ -36,6 +36,12 @@ def relaceNeighbors(origData:list)->list:
 def removeMiddle(origData:list)->list:
     return
 def evenToFront(origData:list)->list:
+    newList = []
+    for i in origData:
+        if i % 2 == 0:
+            newList.append(i)
+        if i % 2 != 0:
+            newList.append(i)
     return
 def secondLargest(origData:list)->int:
     i = 0
