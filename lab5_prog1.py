@@ -6,7 +6,7 @@
 
 def allKeys(grade)->None:
     """keys in dict are retrieved"""
-    print("\nAll the keys:")  #some prints statements are put before   
+    print("All the keys:")  #some prints statements are put before   
     for key in grade.keys():  #loop so the statement is not repeated
         print(key)  #keys are found in dict
 
@@ -66,3 +66,43 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+input("\nPress enter to quit")
+
+
+
+##Test Case 1
+##====== RESTART: /Users/clairerhoda/workspace/comp_sci_10/lab5_prog1.py ======
+##All the keys:
+##A
+##D
+##
+##B
+##F
+##C
+##
+##All the values:
+##8
+##3
+##15
+##2
+##6
+##
+##The key and value pairs:
+##A 8
+##D 3
+##B 15
+##F 2
+##C 6
+##
+##The key and pairs in key order:
+##A 8
+##B 15
+##C 6
+##D 3
+##F 2
+##
+##The average value: 17.0
+##
+##Press enter to quit
+##>>> 
