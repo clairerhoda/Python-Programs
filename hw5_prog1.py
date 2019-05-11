@@ -3,7 +3,8 @@
 #Program 1
 #This program organizes a given text file alphabetically into rows and columns
 
-def columnTotal(teaData)->dict:
+def rowTotal(teaData)->dict:
+    teaDict = {}
     teaLines = teaData.split('\n')
     for index in teaLines:
        numList = []
@@ -13,37 +14,37 @@ def columnTotal(teaData)->dict:
            sum += float(number)
            numList.append(float(number))
        numList.append(sum)
-       teaDict = {elements[0]: numList}
+       teaDict[elements[0]] = numList
+    return teaDict
        
+def alphaOrder(teaDict)->dict:
+    keyList = []
+    for keys in teaDict.keys():
+        keyList.append(keys)
+        keyList.sort()
+        print(keyList)
+    for tea in keyList:
+        numLine = teaDict[tea]
+        print(tea,format(numLine[0],"12"),numLine[1],numLine[2],numLine[3])
 
-def rowTotal(teaData)->dict:
-    twoDim = []
+    
+def columnTotal(teaData)->dict:
+    numList = []
     teaLines = teaData.split('\n')
     for index in teaLines:
        elements = index.split(":")
-       numList = []
-       
-       for number in elements[1:]:
-          numList.append(number)
-    
-       twoDim.append(numList)
-    sum = 0
-    column = 0
-    row = 0
-    for i in twoDim[column]:
-        for num in twoDim[row]:
-            sum += float(i)
-            column += 1
-            row += 1
-            print(sum)
-       
         
+           
+    
+      
+    
 def main():
     teaTextFile = open('tea.txt','r')
     teaData = teaTextFile.read()
 
-    each_kind = columnTotal(teaData)
-    all_kinds = rowTotal(teaData)
+    each_kind = rowTotal(teaData)
+    alphaOrder(each_kind)
+    all_kinds = columnTotal(teaData)
     teaTextFile.close()
 
 if __name__ == "__main__":
