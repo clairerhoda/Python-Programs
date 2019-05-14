@@ -5,7 +5,6 @@
 
 import tkinter
 
-
 class LoanProgram:
     def __init__(self):
         # Create the main window.
@@ -14,22 +13,22 @@ class LoanProgram:
         self.main_window.title("Loan Calculator")
 
         # Create the six frames.
-        self.annualInterestRate_frame = tkinter.Frame(self.main_window)
+        self.annualInterest_frame = tkinter.Frame(self.main_window)
         self.numberOfYears_frame = tkinter.Frame(self.main_window)
         self.loanAmount_frame = tkinter.Frame(self.main_window)
-        self.monthlyPayment_frame = tkinter.Frame(self.main_window)
-        self.totalPayment_frame = tkinter.Frame(self.main_window)
+        self.monthly_frame = tkinter.Frame(self.main_window)
+        self.total_frame = tkinter.Frame(self.main_window)
         self.button_frame = tkinter.Frame(self.main_window)
 
-        # Create and pack the widgets for Annual Interest Rate.
-        self.annualInterestRate_label = tkinter.Label(self.annualInterestRate_frame, \
+        # Create and pack the widgets annual interest rate.
+        self.annualInterest_label = tkinter.Label(self.annualInterest_frame, \
                         text='Annual Interest Rate')
-        self.annualInterestRate_entry = tkinter.Entry(self.annualInterestRate_frame, \
+        self.annualInterest_entry = tkinter.Entry(self.annualInterest_frame, \
                                          width=10)
-        self.annualInterestRate_label.pack(side='left')
-        self.annualInterestRate_entry.pack(side='left')
+        self.annualInterest_label.pack(side='left')
+        self.annualInterest_entry.pack(side='left')
 
-        # Create and pack the widgets for Number of Years.
+        # Create and pack the widgets for test 2.
         self.numberOfYears_label = tkinter.Label(self.numberOfYears_frame, \
                         text='Number of Years')
         self.numberOfYears_entry = tkinter.Entry(self.numberOfYears_frame, \
@@ -37,7 +36,7 @@ class LoanProgram:
         self.numberOfYears_label.pack(side='left')
         self.numberOfYears_entry.pack(side='left')
         
-        # Create and pack the widgets for Loan Amount.
+        # Create and pack the widgets for test 3.
         self.loanAmount_label = tkinter.Label(self.loanAmount_frame, \
                         text='Loan Amount')
         self.loanAmount_entry = tkinter.Entry(self.loanAmount_frame, \
@@ -45,60 +44,72 @@ class LoanProgram:
         self.loanAmount_label.pack(side='left')
         self.loanAmount_entry.pack(side='left')
 
-        # Create and pack the widgets for Monthly Payment.
-        self.result_label = tkinter.Label(self.monthlyPayment_frame, \
+
+        # Create and pack the widgets for the average.
+        self.result_label = tkinter.Label(self.monthly_frame, \
                         text='Monthly Payment')
-        self.monthlyPayment = tkinter.StringVar() # To update avg_label
-        self.monthlyPayment_label = tkinter.Label(self.monthlyPayment_frame, \
-                                    textvariable=self.monthlyPayment)
+        self.monthly = tkinter.StringVar() # To update monthly_label
+        self.monthly_label = tkinter.Label(self.monthly_frame, \
+                                    textvariable=self.monthly)
         self.result_label.pack(side='left')
-        self.monthlyPayment_label.pack(side='left')
+        self.monthly_label.pack(side='left')
 
-        # Create and pack the widgets for Total Payment.
-        self.result_label = tkinter.Label(self.totalPayment_frame, \
+
+        # Create and pack the widgets for the total payment.
+        self.result_label = tkinter.Label(self.total_frame, \
                         text='Total Payment')
-        self.totalPayment = tkinter.StringVar() # To update avg_label
-        self.totalPayment_label = tkinter.Label(self.totalPayment_frame, \
-                                    textvariable=self.totalPayment)
+        self.total = tkinter.StringVar() # To update avg_label
+        self.total_label = tkinter.Label(self.total_frame, \
+                                    textvariable=self.total)
         self.result_label.pack(side='left')
-        self.totalPayment_label.pack(side='left')
-
-        # Create and pack the button widgets.
-        self.compute_button = tkinter.Button(self.button_frame, \
-                                     text='Compute Payment', \
-                                     command=self.total_payment)
-        self.compute_button.pack(side='right')
+        self.total_label.pack(side='left')
         
 
+        # Create and pack the button widgets.
+        
+        self.calc_button = tkinter.Button(self.button_frame, \
+                        text='Compute Payment', \
+                                     command=self.calc_monthly_total)
+        
+        self.calc_button.pack(side='left')
+
         # Pack the frames.
-        self.annualInterestRate_frame.pack()
+        self.annualInterest_frame.pack()
         self.numberOfYears_frame.pack()
         self.loanAmount_frame.pack()
-        self.monthlyPayment_frame.pack()
+        self.monthly_frame.pack()
+        self.total_frame.pack()
         self.button_frame.pack()
 
         # Start the main loop.
         tkinter.mainloop()
+        
 
-    # The total_payment method is the callback function for
-    # the compute_button widget.
-
-
-    def total_payment(self):
-        # Get the three test scores and store them
-        # in variables.
-        self.annualInterestRate = float(self.annualInterestRate_entry.get())
+    def calc_monthly_total(self):
+        # Get the annual interest rate, the number of years, and the
+        #loan amount and store in variables.
+        self.annualInterest = float(self.annualInterest_entry.get())
         self.numberOfYears = float(self.numberOfYears_entry.get())
         self.loanAmount = float(self.loanAmount_entry.get())
 
-        # Calculate the average.
-        self.totalPayment = (self.annualInterestRate + self.numberOfYears + \
-                        self.loanAmount) / 3.0
+        # Calculate the monthly payment.
+        self.monthlyInterestRate = self.annualInterest / 1200
+        self.monthlyPayment = self.loanAmount * self.monthlyInterestRate / \
+                         (1 - (1 / (1 + self.monthlyInterestRate) ** \
+                               (self.numberOfYears * 12)))
+        
+        self.totalPayment = self.monthlyPayment * self.numberOfYears * 12
 
-        # Update the avg_label widget by storing
-        # the value of self.average in the StringVar
-        # object referenced by avg.
-        self.totalPayment.set(self.totalPayment)
+        # Update the monthly_label widget by storing
+        # the value of self.monthlyPayment in the StringVar1
+        # object referenced by monthly.
+        self.monthly.set(format(self.monthlyPayment,'.2f'))
+
+        # Update the total_label widget by storing
+        # the value of self.totalPayment in the StringVar2
+        # object referenced by total
+        self.total.set(format(self.totalPayment,'.2f'))
 
 # Create an instance of the TestAvg class.
-loan_program = LoanProgram()
+test_loan = LoanProgram()
+
