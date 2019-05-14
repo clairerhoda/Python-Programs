@@ -22,21 +22,20 @@ def alphaOrder(teaDict)->dict:
     for keys in teaDict.keys():
         keyList.append(keys)
         keyList.sort()
-        print(keyList)
     for tea in keyList:
         numLine = teaDict[tea]
-        print(tea,format(numLine[0],"12"),numLine[1],numLine[2],numLine[3])
+        print(tea,format(numLine[0],"12.2f"),format(numLine[1],"12.2f"),\
+              format(numLine[2],"12.2f"),format(numLine[3],"12.2f"))
 
-    
-def columnTotal(teaData)->dict:
-    numList = []
-    teaLines = teaData.split('\n')
-    for index in teaLines:
-       elements = index.split(":")
-        
-           
-    
-      
+def columnTotal(teaDict)->str:
+    sum1 = 0
+    sum2 = 0
+    sum3 = 0
+    for value in teaDict.values():
+        sum1 += value[0]
+        sum2 += value[1]
+        sum3 += value[2]
+    print(format(sum1,'21.2f'),format(sum2,'12.2f'),format(sum3,'12.2f'))
     
 def main():
     teaTextFile = open('tea.txt','r')
@@ -44,7 +43,7 @@ def main():
 
     each_kind = rowTotal(teaData)
     alphaOrder(each_kind)
-    all_kinds = columnTotal(teaData)
+    all_kinds = columnTotal(each_kind)
     teaTextFile.close()
 
 if __name__ == "__main__":
