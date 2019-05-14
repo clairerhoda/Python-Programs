@@ -4,7 +4,9 @@
 #This program calculates and displays the loan for buying a car.
 
 class Loan:
+    #initializer is created
     def __init__(self,annualInterest,numberOfYears,loanAmount,borrowersName):
+        #all inputs are set 
         self.__annualInterest = annualInterest
         self.__numberOfYears = numberOfYears
         self.__loanAmount = loanAmount
@@ -12,38 +14,47 @@ class Loan:
         
 
     def setAnnualInterestRate(self, annualInterestRate):
+        """mutates interest rate"""
         self.__annualInterestRate = annualInterestRate
         
 
     def setNumberOfYears(self, numberOfYears):
+        """mutates number of years"""
         self.__numberOfYears = numberOfYears
         
 
     def setLoanAmount(self, loanAmount):
+        """mutates loan amount"""
         self.__loanAmount = loanAmount
         
 
     def setBorrowerName(self, borrowersName):
+        """mutates borrowers name"""
         self.__borrowersName = borrowerName
         
 
     def getAnnualInterestRate(self):
+        """getter for annual interest rate"""
         return self.__annualInterest
     
 
     def getNumberOfYears(self):
+        """getter for number of years"""
         return self.__numberOfYears
     
 
     def getLoanAmount(self):
+        """getter for loan amount"""
         return self.__loanAmount
     
 
     def getBorrowersName(self):
+        """getter for borrowers name"""
         return self.__borrowersName
 
     
     def getMonthlyPayment(self):
+        """monthly interest rate and payment are mutated"""
         monthlyInterestRate = self.__annualInterest / 1200
         monthlyPayment = self.__loanAmount * monthlyInterestRate / \
                          (1 - (1 / (1 + monthlyInterestRate) ** \
@@ -52,15 +63,18 @@ class Loan:
 
 
     def getTotalPayment(self):
+        """getter for total payment"""
         totalPayment = self.getMonthlyPayment() * self.__numberOfYears * 12
         return totalPayment
 
         
 def main():
+    #user input loan information
     annualInterestRate = float(input("Enter yearly interest rate:"))
     numOfYearsLoan = float(input("Enter number of years as an interger:"))
     loanAmount = float(input("Enter loan amount:"))
     borrowersName = input("Enter a borrower's name:")
+    #infomration is sent to class
     loan = Loan(annualInterestRate,numOfYearsLoan,loanAmount,\
                 borrowersName)
 
@@ -71,6 +85,7 @@ def main():
     if answer.upper() == 'Y':
         loanAmount = float(input("Enter new loan amount"))
         print("The loan if for",loan.getBorrowersName())
+        #new information is resent to class
         loan = Loan(annualInterestRate,numOfYearsLoan,loanAmount,\
                 borrowersName)
         print("The monthly payment is",format(loan.getMonthlyPayment(),'.2f'))
