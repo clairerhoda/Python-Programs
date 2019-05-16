@@ -12,19 +12,31 @@ def abbvDict(abbvData:str)->dict:
     return abbvDictionary
 
 
-def transaltedAbbv(abbv:dict,makeDict:dict)->str:
-    return makeDict[abbv]
+def transaltedAbbv(abbvList:list,makeDict:dict)->str:
+    return makeDict[abbvList]
+  
 
 def main():
+    containsPunc = False
     abbvTextFile = open('textabbv.txt' ,'r')
     abbvData = abbvTextFile.read()
-
+    punc = "!,?,,,-,_,.,{,},[,],(,),&,^,*,%,$,@"
     makeDict = abbvDict(abbvData)
     print(makeDict)
     abbv = input("Enter a message to be translated:\n")
-    newList = []
-    newList.append(abbv.lower())
-    print("The translated text is:\n",transaltedAbbv(abbv,makeDict))
+    abbvList = abbv.split(" ")
+    for word in abbvList:
+        for ch in word:
+            if ch in punc:
+                singlePunc = ch
+                word = word.strip(ch)
+                word = makeDict[word] + ch
+            
+            
+        print(word)
+        
+
+    
 
 if __name__ == "__main__":
     main()
