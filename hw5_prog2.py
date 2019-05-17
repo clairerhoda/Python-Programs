@@ -26,14 +26,16 @@ def main():
     abbv = input("Enter a message to be translated:\n")
     abbvList = abbv.split(" ")
     for word in abbvList:
-        for ch in word:
+        for ch in word[-1]:
             if ch in punc:
                 singlePunc = ch
                 word = word.strip(ch)
                 word = makeDict[word] + ch
             
+                print(word,end=' ')
             
-        print(word)
+            else:
+                print(makeDict[word],end=' ')
         
 
     
